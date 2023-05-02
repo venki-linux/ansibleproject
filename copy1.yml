@@ -1,0 +1,6 @@
+---
+ - name: copy file
+   hosts: all
+   tasks:
+     - name: copy file, if already file exist with same name-take backup
+       copy: src=/etc/shadow dest=/tmp/shadow backup=yes
