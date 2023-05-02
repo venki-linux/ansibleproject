@@ -1,0 +1,6 @@
+---
+ - name: create a file and  add line in file
+   hosts: all
+   tasks:
+    - file: dest=/tmp/file1 state=touch
+    - lineinfile: dest=/tmp/file1 line='adding line using lineinfile module'
