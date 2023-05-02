@@ -1,0 +1,6 @@
+---
+ - name: delete files using file module
+   hosts: all
+   tasks:
+    - name: delete file
+      file: dest=/tmp/file1 state=absent
