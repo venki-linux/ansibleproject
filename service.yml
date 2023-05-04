@@ -1,0 +1,32 @@
+##########START SERVICES#########
+---
+ - name: start services
+   hosts: all
+   tasks:
+     - name: start multiple services and enable
+       service: name=httpd state=started enabled=yes
+     - service: name=vsftpd state=started enabled=yes
+     - service: name=samba state=started enabled=yes
+...
+
+#########STOP SERVICES##########
+---
+ - name: stopping services
+   hosts: all
+   tasks:
+     - name: stop services and disable
+       service: name=httpd state=stopped enabled=no
+     - service: name=vsfptd state=stopped enabled=no
+     - service: name=samba state=stopped enabled=no
+...
+
+#########RESTART SERVICES#######
+
+---
+ - name: restart services
+   hosts: all
+   tasks:
+     - name: restarting services
+       service: name=httpd state=restarted
+     - service: name=vsftpd state=restarted
+...
