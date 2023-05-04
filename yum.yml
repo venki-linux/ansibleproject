@@ -1,0 +1,34 @@
+---
+ - name: installing packages using yum
+   hosts: all
+   tasks:
+     - name: install httpd package
+       yum: pkg=httpd state=present
+     - yum: pkg=vsftpd state=present
+     - yum: pkg=samba state=present
+...
+
+
+
+#####TO REMOVE PACKAGES#########
+
+---
+ - name: removing or uninstalling packages
+   hosts: all
+   tasks:
+     - name: uninstall packages
+       yum: pkg=samba state=absent
+     - yum: name=vsftpd state=absent
+...
+
+
+#####UPDATE PACKAGES###########
+
+---
+ - name: updating packages
+   hosts: all
+   tasks:
+     - name: updating packages
+       yum: pkg=httpd state=latest
+     - yum: pkg=vsftpd state=latest
+...
