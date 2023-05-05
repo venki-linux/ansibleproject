@@ -1,0 +1,21 @@
+---
+ - name: using variables in debug module
+   hosts: all
+   tasks:
+     - name: hostnames using variables
+       debug:
+       msg: "the hostname is {{inventory_hostname}}"
+...
+
+#######using var parameters############
+
+
+---
+ - name: using debug and var
+   hosts: all
+   tasks:
+     - name: print hostnames
+       debug:
+       msg: "the hostname is {{inventory_hostname}}"
+       var: inventory_hostname
+...
