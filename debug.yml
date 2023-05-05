@@ -1,0 +1,22 @@
+---
+ - name: to display message or content
+   hosts: all
+   tasks:
+     - name: display the content
+       debug: msg="Welcome to Varains"
+...
+
+
+########DISPLAY MULTIPLE MESSAGES########
+
+---
+ - name: display mutliple messages
+   hosts: all
+   tasks:
+     - name: display multiple messages
+       debug:
+       msg:
+         - "Welcome to Varains"
+         - "Welcome to Nareshins"
+         - "Welcome to Deloitte"
+...
