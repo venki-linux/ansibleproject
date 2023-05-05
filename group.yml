@@ -1,0 +1,15 @@
+---
+ - name: creating group 
+   hosts: all
+   tasks:
+     - name: create group
+       group: name=bat22 gid=500 state=present
+...
+
+---
+ - name: delete group
+   hosts: all
+   tasks:
+     - name: delete group
+       group: name=bat22 gid=500 state=absent
+...
