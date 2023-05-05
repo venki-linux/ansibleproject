@@ -1,0 +1,24 @@
+---
+ - name: using register module for multiple tasks
+   hosts: all
+   tasks:
+     - name: server kernels
+       command: uname -a
+       register: kernel
+     - debug: var=kernel.stdout
+
+     - name: server date
+       command: date
+       register: date
+     - debug: var=date.stdout
+
+     - name: server uptime
+       shell: uptime
+       register: uptime
+     - debug: var=uptime.stdout
+
+     - debug: server hostname
+       shell: hostname
+       register: host
+     - debug: var= hostname.stdout
+...
