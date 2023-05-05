@@ -1,0 +1,26 @@
+##to see the outputs of the monitoring commands, register module is used#####
+
+---
+ - name: using register module
+   hosts: all
+   tasks:
+     - name: server kernel
+       command: uname -a
+       register: output
+     - debug: var=output
+     - debug: msg= "the kernel version is {{output}}"
+...
+
+
+##########to get only standard output#########################
+
+---
+ - name: check the kernel version
+   hosts: all
+   tasks:
+     - name: server kernel is
+       shell: uname -r
+       register: kernel
+     - debug: var=kernel.stdout
+     - debug: msg= "the kernel version is {{kernel.stdout}}"
+...
