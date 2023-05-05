@@ -1,0 +1,26 @@
+---
+ - name: file level variables
+   hosts: all
+   vars:
+     os: "linux"
+   tasks:
+     - name: file level variables
+       debug:
+         msg: "my operating system is {{os}}"
+...
+
+
+#######VARIABLES AND DEBUG#################
+
+---
+ - name: showing variables
+   hosts: all
+   vars:
+     os: "linux"
+     cloud: "aws"
+     tools: "devOps"
+   tasks:
+     - debug: msg= "I have learnt {{os}} os"
+     - debug: msg= "I have learnt {{cloud}} in cloud"
+     - debug: msg= "I will learn {{tools}}"
+...
