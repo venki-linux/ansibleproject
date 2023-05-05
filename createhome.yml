@@ -1,0 +1,7 @@
+---
+ - name: create home directory to a user
+   hosts: all 
+   tasks:
+     - name: create a home directory
+       file: path=/home/venki state=directory mode=0700 owner=venki group=bat22a
+...
