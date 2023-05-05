@@ -1,0 +1,19 @@
+---
+ - name: fetch/download files from client hosts
+   hosts: all
+   tasks:
+    - name: pull/download files from client hosts
+      fetch: src=/tmp/output dest=/outputs/
+...
+
+
+##########FLAT=YES##################
+#if there is no directory in server, it creates directory and fetches data from clients
+
+---
+ - name: fetch from clients
+   hosts: all
+   tasks:
+     - name: fetch all clients
+       fetch: src=/tmp/output dest=/outputs/may5/ flat=yes
+...
